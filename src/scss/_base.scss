@@ -72,4 +72,33 @@ body {
 		padding: abs.toRem(12px);
 		border-radius: abs.toRem(8px);
 	}
+
+	&__item-heading {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__item-title--todo {
+		color: abs.$cl-blue-2;
+	}
+
+	&__item-title--in-progress {
+		color: abs.$cl-orange-1;
+	}
+
+	&__item-title--completed {
+		color: abs.$cl-brown-1;
+	}
+
+	&__options {
+		display: flex;
+		align-items: center;
+		gap: abs.toRem(12px);
+		font-size: abs.toRem(24px);
+	}
+
+	&__option {
+		cursor: pointer;
+	}
 }
