@@ -13,11 +13,115 @@ body {
 	font-size: abs.toRem(16px);
 }
 
+// MODAL
+.modal {
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	z-index: 100;
+
+	&__content {
+		box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+		padding: abs.toRem(24px);
+		border-radius: abs.toRem(12px);
+		background-color: abs.$cl-white-1;
+		width: 50%;
+		position: relative;
+	}
+
+	&__close {
+		cursor: pointer;
+		position: absolute;
+		top: abs.toRem(20px);
+		right: abs.toRem(20px);
+		font-size: inherit;
+		width: 24px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid abs.$cl-red;
+		padding: abs.toRem(10px);
+		border-radius: 50%;
+		background: none;
+		font-weight: abs.$fw-xlarge;
+		color: abs.$cl-red;
+	}
+
+	&__heading {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: abs.$cl-blue-2;
+		margin-bottom: abs.toRem(30px);
+	}
+
+	&__form div {
+		display: flex;
+		flex-direction: column;
+
+		&:not(:last-child) {
+			margin-bottom: abs.toRem(20px);
+		}
+	}
+
+	&__form-label {
+		margin-bottom: abs.toRem(8px);
+	}
+
+	&__input,
+	&__select {
+		font-family: inherit;
+		font-size: inherit;
+		padding: abs.toRem(10px);
+		border: none;
+		background-color: abs.$cl-white-2;
+		border-radius: abs.toRem(8px);
+	}
+
+	&__input-description {
+		min-height: abs.toRem(200px);
+		resize: none;
+	}
+
+	&__form-button {
+		display: block;
+		width: abs.toRem(170px);
+		margin: 0 auto;
+	}
+}
+
+// HEADER
+.header {
+	max-width: abs.toRem(1300px);
+	margin: abs.toRem(50px) auto;
+	text-align: center;
+
+	&__button {
+		cursor: pointer;
+		font-size: inherit;
+		font-family: inherit;
+		border: none;
+		color: abs.$cl-white-1;
+		font-weight: abs.$fw-small;
+		background-color: abs.$cl-blue-1;
+		padding: abs.toRem(10px) abs.toRem(20px);
+		border-radius: abs.toRem(12px);
+	}
+}
+
 // TASKS
 .task {
 	&__categories {
 		max-width: abs.toRem(1300px);
-		margin: abs.toRem(50px) auto;
+		margin: 0 auto;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		column-gap: abs.toRem(24px);
