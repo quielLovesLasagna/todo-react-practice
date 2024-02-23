@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+// COLORS
+$cl-blue-1: #2563dc;
+$cl-blue-2: #14367b; // FOR TEXT
+$cl-blue-3: #cad9f6; // FOR BORDER
+
+$cl-white-1: #fff;
+$cl-white-2: #efefef;
+$cl-white-3: #eef2fc; // FOR BG
+
+$cl-orange-1: #8f4f00; // FOR TEXT
+$cl-orange-2: #fff6eb; // FOR BG
+$cl-orange-3: #ffe4c2; // FOR BORDER
+
+$cl-brown-1: #81290e; // FOR TEXT
+$cl-brown-2: #fdf0ec; // FOR BG
+$cl-brown-3: #fad0c6; // FOR BORDER
+
+$cl-grey-1: #3d3d3d;
+$cl-grey-2: #5c5c5c;
+
+$cl-black-1: #000;
+
+// FONT-FAMILY
+$ff-poppins: "Poppins", sans-serif;
+
+// FONT-WEIGHT
+$fw-tiny: 400;
+$fw-small: 500;
+$fw-medium: 600;
+$fw-large: 700;
+$fw-xlarge: 800;
+
+// FUNCTION
+@function toRem($size) {
+	$remSize: calc($size / 16px);
+	@return #{$remSize}rem;
+}

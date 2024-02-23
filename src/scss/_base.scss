@@ -1,0 +1,75 @@
+@use "./abstracts" as abs;
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: abs.$ff-poppins;
+	font-size: abs.toRem(16px);
+}
+
+// TASKS
+.task {
+	&__categories {
+		max-width: abs.toRem(1300px);
+		margin: abs.toRem(50px) auto;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: abs.toRem(24px);
+	}
+
+	&__category {
+		padding: abs.toRem(12px);
+		border-radius: abs.toRem(12px);
+		min-height: abs.toRem(580px);
+
+		&-heading {
+			margin-bottom: abs.toRem(12px);
+		}
+
+		&--todo {
+			border: 1px solid abs.$cl-blue-3;
+			background-color: abs.$cl-white-3;
+
+			.task__category-heading {
+				color: abs.$cl-blue-2;
+			}
+		}
+
+		&--in-progress {
+			border: 1px solid abs.$cl-orange-3;
+			background-color: abs.$cl-orange-2;
+
+			.task__category-heading {
+				color: abs.$cl-orange-1;
+			}
+		}
+
+		&--completed {
+			border: 1px solid abs.$cl-brown-3;
+			background-color: abs.$cl-brown-2;
+
+			.task__category-heading {
+				color: abs.$cl-brown-1;
+			}
+		}
+	}
+
+	&__list {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: abs.toRem(12px);
+	}
+
+	&__item {
+		background-color: abs.$cl-white-1;
+		padding: abs.toRem(12px);
+		border-radius: abs.toRem(8px);
+	}
+}
