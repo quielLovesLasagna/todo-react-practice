@@ -1,10 +1,8 @@
-import Tasks from "./Tasks";
-
-export default function TaskCategory({ category, classTag }) {
+export default function TaskCategory({ heading, classTag, children }) {
 	return (
 		<div className={`task__category task__category--${classTag}`}>
-			<h2 className="task__category-heading">{category}</h2>
-			<Tasks status={classTag} />
+			<h2 className="task__category-heading">{heading}</h2>
+			{children}
 		</div>
 	);
 }

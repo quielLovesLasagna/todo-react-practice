@@ -1,11 +1,3 @@
-import Button from "./Button";
-
-export default function Header({ onToggleModal }) {
-	return (
-		<header className="header">
-			<Button className={"header__button"} onClick={onToggleModal}>
-				Add new task ➕
-			</Button>
-		</header>
-	);
+export default function Header({ children }) {
+	return <header className="header">{children}</header>;
 }

@@ -131,6 +131,8 @@ body {
 		padding: abs.toRem(12px);
 		border-radius: abs.toRem(12px);
 		min-height: abs.toRem(580px);
+		max-height: abs.toRem(580px);
+		overflow-y: auto;
 
 		&-heading {
 			margin-bottom: abs.toRem(12px);
