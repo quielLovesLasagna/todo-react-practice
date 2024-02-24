@@ -182,7 +182,22 @@ body {
 	&__item-heading {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		gap: abs.toRem(10px);
+	}
+
+	&__options {
+		display: flex;
+		align-items: center;
+		gap: abs.toRem(12px);
+		font-size: abs.toRem(24px);
+		margin-left: auto;
+	}
+
+	&__option {
+		cursor: pointer;
+		border: none;
+		background: none;
+		font-size: abs.toRem(24px);
 	}
 
 	&__item-title--todo {
@@ -197,14 +212,8 @@ body {
 		color: abs.$cl-brown-1;
 	}
 
-	&__options {
-		display: flex;
-		align-items: center;
-		gap: abs.toRem(12px);
-		font-size: abs.toRem(24px);
-	}
-
-	&__option {
-		cursor: pointer;
+	// COMPLETED STATE
+	&__item--dashed {
+		text-decoration: line-through;
 	}
 }

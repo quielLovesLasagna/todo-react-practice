@@ -21,6 +21,31 @@ export default function App() {
 		setTasks((tasks) => [...tasks, task]);
 	}
 
+	// ! -- Deleted a specific task based on task id
+	function handleDeleteTask(id) {
+		setTasks((tasks) => tasks.filter((task) => task.id !== id));
+	}
+
+	// ! -- Toggle task completion
+	function handleToggleCompleteTask(id) {
+		setTasks((tasks) =>
+			tasks.map((task) =>
+				task.id === id
+					? {
+							...task,
+							completed: !task.completed,
+							type: task.completed ? "todo" : "completed",
+					  }
+					: task
+			)
+		);
+	}
+
+	// ! -- Filter tasks based on their type
+	const todoTasks = tasks.filter((task) => task.type === "todo");
+	const inProgressTasks = tasks.filter((task) => task.type === "in-progress");
+	const completedTasks = tasks.filter((task) => task.type === "completed");
+
 	return (
 		<main className="main">
 			{showModal && (
@@ -35,13 +60,31 @@ export default function App() {
 			</Header>
 			<TasksCategories>
 				<TaskCategory heading={"📄 To do"} classTag={"todo"}>
-					{tasks.length > 0 && <Tasks status={"todo"} tasks={tasks} />}
+					{tasks.length > 0 && (
+						<Tasks
+							tasks={todoTasks}
+							onDeleteTask={handleDeleteTask}
+							onToggleCompleteTask={handleToggleCompleteTask}
+						/>
+					)}
 				</TaskCategory>
 				<TaskCategory heading={"⏳ In Progress"} classTag={"in-progress"}>
-					{tasks.length > 0 && <Tasks status={"in-progress"} tasks={tasks} />}
+					{tasks.length > 0 && (
+						<Tasks
+							tasks={inProgressTasks}
+							onDeleteTask={handleDeleteTask}
+							onToggleCompleteTask={handleToggleCompleteTask}
+						/>
+					)}
 				</TaskCategory>
 				<TaskCategory heading={"☑ Completed"} classTag={"completed"}>
-					{tasks.length > 0 && <Tasks status={"completed"} tasks={tasks} />}
+					{tasks.length > 0 && (
+						<Tasks
+							tasks={completedTasks}
+							onDeleteTask={handleDeleteTask}
+							onToggleCompleteTask={handleToggleCompleteTask}
+						/>
+					)}
 				</TaskCategory>
 			</TasksCategories>
 		</main>

@@ -21,9 +21,10 @@ export default function Form({ onToggleModal, onAddTask }) {
 
 		// ! -- Generate new task object
 		const newTask = {
+			type: category,
+			completed: false,
 			title,
 			description,
-			status: category,
 			id,
 		};
 
