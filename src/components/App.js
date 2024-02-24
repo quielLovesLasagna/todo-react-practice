@@ -41,6 +41,28 @@ export default function App() {
 		);
 	}
 
+	// ! -- Set task as in-progress
+	function handleMarkTaskInProgress(id) {
+		setTasks((tasks) =>
+			tasks.map((task) =>
+				task.id === id && task.type !== "in-progress"
+					? {
+							...task,
+							completed: false,
+							type: "in-progress",
+					  }
+					: task
+			)
+		);
+	}
+
+	// ! -- Updates a specific task after being edited
+	function handleUpdateTask(updatedTask) {
+		setTasks((tasks) =>
+			tasks.map((task) => (task.id === updatedTask.id ? updatedTask : task))
+		);
+	}
+
 	// ! -- Filter tasks based on their type
 	const todoTasks = tasks.filter((task) => task.type === "todo");
 	const inProgressTasks = tasks.filter((task) => task.type === "in-progress");
@@ -65,6 +87,8 @@ export default function App() {
 							tasks={todoTasks}
 							onDeleteTask={handleDeleteTask}
 							onToggleCompleteTask={handleToggleCompleteTask}
+							onMarkTaskInProgress={handleMarkTaskInProgress}
+							onUpdateTask={handleUpdateTask}
 						/>
 					)}
 				</TaskCategory>
@@ -74,6 +98,8 @@ export default function App() {
 							tasks={inProgressTasks}
 							onDeleteTask={handleDeleteTask}
 							onToggleCompleteTask={handleToggleCompleteTask}
+							onMarkTaskInProgress={handleMarkTaskInProgress}
+							onUpdateTask={handleUpdateTask}
 						/>
 					)}
 				</TaskCategory>
@@ -83,6 +109,8 @@ export default function App() {
 							tasks={completedTasks}
 							onDeleteTask={handleDeleteTask}
 							onToggleCompleteTask={handleToggleCompleteTask}
+							onMarkTaskInProgress={handleMarkTaskInProgress}
+							onUpdateTask={handleUpdateTask}
 						/>
 					)}
 				</TaskCategory>

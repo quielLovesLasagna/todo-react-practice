@@ -1,6 +1,12 @@
 import Task from "./Task";
 
-export default function Tasks({ tasks, onDeleteTask, onToggleCompleteTask }) {
+export default function Tasks({
+	tasks,
+	onDeleteTask,
+	onToggleCompleteTask,
+	onMarkTaskInProgress,
+	onUpdateTask,
+}) {
 	// ! -- If there is no task based on each category, don't render the task list
 	if (tasks.length === 0) return;
 
@@ -12,6 +18,8 @@ export default function Tasks({ tasks, onDeleteTask, onToggleCompleteTask }) {
 					key={task.id}
 					onDeleteTask={onDeleteTask}
 					onToggleCompleteTask={onToggleCompleteTask}
+					onMarkTaskInProgress={onMarkTaskInProgress}
+					onUpdateTask={onUpdateTask}
 				/>
 			))}
 		</ul>
