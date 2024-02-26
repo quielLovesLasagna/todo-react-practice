@@ -6,7 +6,6 @@ export default function AddTaskForm({ onToggleModal, onAddTask }) {
 	const [description, setDescription] = useState("");
 	const [category, setCategory] = useState("todo");
 
-	// TODO -- implement adding task functionality
 	function handleSubmit(e) {
 		e.preventDefault();
 
