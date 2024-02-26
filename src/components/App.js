@@ -9,8 +9,6 @@ import AddTaskForm from "./AddTaskForm";
 import SearchTaskForm from "./SearchTaskForm";
 
 export default function App() {
-	// const [showModal, setShowModal] = useState(false);
-	// const [showModal2, setShowModal2] = useState(false);
 	const [modalStates, setModalStates] = useState([
 		{
 			showModal: false,
