@@ -48,6 +48,7 @@ export default function Task({
 				{editing ? (
 					<input
 						type="text"
+						className="task__title--edit"
 						value={updatedTitle}
 						onChange={(e) => setUpdatedTitle(e.target.value)}
 					/>
@@ -79,6 +80,7 @@ export default function Task({
 			</div>
 			{editing ? (
 				<textarea
+					className="task__description--edit"
 					value={updatedDescription}
 					onChange={(e) => setUpdatedDescription(e.target.value)}
 				/>

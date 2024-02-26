@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
 
-export default function Form({ onToggleModal, onAddTask }) {
+export default function AddTaskForm({ onToggleModal, onAddTask }) {
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
 	const [category, setCategory] = useState("todo");
@@ -22,7 +22,7 @@ export default function Form({ onToggleModal, onAddTask }) {
 		// ! -- Generate new task object
 		const newTask = {
 			type: category,
-			completed: false,
+			completed: category === "completed" ? true : false,
 			title,
 			description,
 			id,
